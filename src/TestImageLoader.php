@@ -195,6 +195,7 @@ class TestImageLoader
         } else {
             file_put_contents($filePath, $body);
         }
+        
         return $filePath;
     }
 
