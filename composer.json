@@ -1,12 +1,13 @@
 {
     "name":         "afrobber/test-image-loader",
     "description":  "Test task for Hexa LLC",
+    "type":         "library",
     "version":      "0.1",
     "license":      "NO LICENSE",
     "require":      {
         "php": ">=5.6"
     },
     "autoload":     {
-        "psr-4": {"afrobber\\test-image-loader\\": ["src/"]}
+        "psr-4": {"afrobber\\TestImageLoader\\": "src/"}
     }
 }
