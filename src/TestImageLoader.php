@@ -1,5 +1,6 @@
 <?php
 
+namespace afrobber\TestImageLoader;
 
 class TestImageLoader
 {
