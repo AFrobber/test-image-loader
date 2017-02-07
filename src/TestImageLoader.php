@@ -192,10 +192,10 @@ class TestImageLoader
                     .' Hash local file: ' . $localHash . ', hash remote file: ' . $remoteHash
                 );
             }
+        } else {
+            file_put_contents($filePath, $body);
         }
-
-        file_put_contents($filePath, $body);
-        return true;
+        return $filePath;
     }
 
 }
