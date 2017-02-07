@@ -2,6 +2,8 @@
 
 namespace afrobber\TestImageLoader;
 
+use Exception;
+
 class TestImageLoader
 {
     /** @var string $hashAlgo */
@@ -19,8 +21,11 @@ class TestImageLoader
     /** @var string $uploadDir */
     private $uploadDir = __DIR__ . DIRECTORY_SEPARATOR . 'upload' . DIRECTORY_SEPARATOR;
 
-    public function __construct()
+    public function __construct($uploadDir = '')
     {
+        if($uploadDir) {
+            $this->setUploadDir($uploadDir);
+        }
         $this->checkUploadDir();
         $this->refreshMimeTypes();
     }
@@ -88,7 +93,7 @@ class TestImageLoader
      * @return string
      * @throws Exception
      */
-    public function checkUploadDir()
+    private function checkUploadDir()
     {
         if(!is_dir($this->uploadDir)) {
             if(!mkdir($this->uploadDir)) {
