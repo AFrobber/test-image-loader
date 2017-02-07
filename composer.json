@@ -7,6 +7,6 @@
         "php": ">=5.6"
     },
     "autoload":     {
-        "psr-4": {"afrobber\\test-image-loader": ["src/"]}
+        "psr-4": {"AFrobber\\test-image-loader": ["src/"]}
     }
 }
