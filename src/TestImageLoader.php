@@ -82,6 +82,9 @@ class TestImageLoader
      */
     public function setUploadDir(string $uploadDir)
     {
+        if(DIRECTORY_SEPARATOR != substr($uploadDir, -1, 1)) {
+            $uploadDir .= DIRECTORY_SEPARATOR;
+        }
         $this->uploadDir = $uploadDir;
         $this->checkUploadDir();
         return $this;
