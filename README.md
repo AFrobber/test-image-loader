@@ -3,6 +3,7 @@ Test task for Hexa LLC
 
 Для установки с помощью composer файле composer.json в разделах require и repositories (если нет - создать) прописать следующее:
 
+{code}
 "require": {
 ...
         "AFrobber/test-image-loader":"*@dev"
@@ -11,6 +12,8 @@ Test task for Hexa LLC
 "repositories": [
         { "type": "git", "url": "https://github.com/AFrobber/test-image-loader.git" }
 ]
+
+{code}
 
 и запустить composer update
 
