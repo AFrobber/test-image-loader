@@ -3,17 +3,15 @@ Test task for Hexa LLC
 
 Для установки с помощью composer файле composer.json в разделах require и repositories (если нет - создать) прописать следующее:
 
-{code}
-"require": {
-...
-        "AFrobber/test-image-loader":"*@dev"
-},
-...
-"repositories": [
-        { "type": "git", "url": "https://github.com/AFrobber/test-image-loader.git" }
-]
+        "require": {
+        ...
+                "AFrobber/test-image-loader":"*@dev"
+        },
+        ...
+        "repositories": [
+                { "type": "git", "url": "https://github.com/AFrobber/test-image-loader.git" }
+        ]
 
-{code}
 
 и запустить composer update
 
@@ -21,31 +19,31 @@ Test task for Hexa LLC
 
 Пример использования:
 
-use afrobber\TestImageLoader\TestImageLoader;
-...
-    public function test()
-    {
-        try {
+        use afrobber\TestImageLoader\TestImageLoader;
+        ...
+            public function test()
+            {
+                try {
 
-            $dir = base_path('storage'.DIRECTORY_SEPARATOR.'testUpload');
+                    $dir = base_path('storage'.DIRECTORY_SEPARATOR.'testUpload');
 
-            $c = new TestImageLoader($dir);
-            
-            $url = 'http://i3.i.ua/logo_new1.png';
+                    $c = new TestImageLoader($dir);
 
-            $url2 = 'http://i3.i.ua/logo_new2.png'; //файла не существует
+                    $url = 'http://i3.i.ua/logo_new1.png';
 
-            if(!$c->uploadFile($url)) {
-                var_dump($c->getErrors());
+                    $url2 = 'http://i3.i.ua/logo_new2.png'; //файла не существует
+
+                    if(!$c->uploadFile($url)) {
+                        var_dump($c->getErrors());
+                    }
+
+                    if(!$c->uploadFile($url2)) {
+                        var_dump($c->getErrors());
+                    }
+
+                } catch (\Exception $e) {
+                    echo $e->getMessage();
+                }
             }
-
-            if(!$c->uploadFile($url2)) {
-                var_dump($c->getErrors());
-            }
-
-        } catch (\Exception $e) {
-            echo $e->getMessage();
-        }
-    }
 
 
